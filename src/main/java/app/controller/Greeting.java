@@ -1,4 +1,4 @@
-package controllers;
+package app.controller;
 
 public class Greeting {
 

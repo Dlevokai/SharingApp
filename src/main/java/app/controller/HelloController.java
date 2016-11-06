@@ -1,4 +1,4 @@
-package controllers;
+package app.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -17,4 +17,6 @@ public class HelloController {
 		return new Greeting(1, String.format(template, name));
 	}
 
+	//@RequestMapping("/testGetBOFAData")
+	//public BOFA getBofaData()
 }

@@ -40,5 +40,18 @@
 			<p>The content is {{salutation.content}}</p>
 		</div>
 	</div>
+	
+	<form id="some-id" method="POST" action="/authenticate"></form>
+	<script src="https://cdn.plaid.com/link/stable/link-initialize.js"
+		data-client-name="Client Name" 
+		data-form-id="some-id"
+		data-key="74910cd1419c98bd3c108404ceec3a" 
+		data-product="auth" 
+		data-env="tartan">
+	</script>
 </body>
 </html>
+
+#plaid-link-button {
+  border: 10px solid pink;
+}
