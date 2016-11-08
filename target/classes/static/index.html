@@ -1,20 +1,16 @@
 <!doctype html>
-<html>
+<html ng-app="hello"> 
 <head>
 <title>Hello AngularJS</title>
 <link href="css/angular-bootstrap.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 <!-- load angular and angular route via CDN -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-<script
-	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 <script src="js/hello.js"></script>
-
 </head>
+
 <header>
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -30,28 +26,39 @@
 	</nav>
 </header>
 
-<body ng-app="hello">
+<body>
 	<div class="container">
-		<h1>Greeting</h1>
+		<h1>AngularTest</h1>
 		<div ng-controller="home" ng-cloak class="ng-cloak">
 			<p>The ID is {{greeting.id}}</p>
 			<p>The content is {{greeting.content}}</p>
 			<p>The ID is {{salutation.id}}</p>
 			<p>The content is {{salutation.content}}</p>
 		</div>
+		<h1>RestCallTest</h1>
+		<div ng-controller="httpTest">
+			<p>The ID is {{greeting.id}}</p>
+			<p>The content is {{greeting.content}}</p>
+		</div>
+		
+		<h1>JavaRestCallTest</h1>
+		<div ng-controller="JavaHttpTest">
+			<p>The ID is {{greeting.id}}</p>
+			<p>The content is {{greeting.content}}</p>
+		</div>
+		
+		<form id="some-id" method="POST" action="/authenticate"></form>
+		<script src="https://cdn.plaid.com/link/stable/link-initialize.js"
+			data-client-name="Client Name" data-form-id="some-id"
+			data-key="74910cd1419c98bd3c108404ceec3a" data-product="auth"
+			data-env="tartan">
+		</script>
+
 	</div>
 	
-	<form id="some-id" method="POST" action="/authenticate"></form>
-	<script src="https://cdn.plaid.com/link/stable/link-initialize.js"
-		data-client-name="Client Name" 
-		data-form-id="some-id"
-		data-key="74910cd1419c98bd3c108404ceec3a" 
-		data-product="auth" 
-		data-env="tartan">
-	</script>
 </body>
 </html>
 
-#plaid-link-button {
+<!-- #plaid-link-button {
   border: 10px solid pink;
-}
+} -->

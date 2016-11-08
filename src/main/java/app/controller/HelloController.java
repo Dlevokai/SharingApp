@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import app.model.Greeting;
+
 @RestController
 public class HelloController {
 
@@ -17,6 +19,11 @@ public class HelloController {
 		return new Greeting(1, String.format(template, name));
 	}
 
+	@RequestMapping("/angularJsCall")
+	public Greeting angularTest(@RequestParam(value = "name", defaultValue = "World") String name) {
+		return new Greeting(10, String.format("angular call worked!", name));
+	}
+	
 	//@RequestMapping("/testGetBOFAData")
 	//public BOFA getBofaData()
 }
