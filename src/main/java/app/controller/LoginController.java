@@ -51,8 +51,8 @@ public class LoginController {
 	 */
 
 	public String getAccessToken(String clientId, String secret, String publicToken) {
+		
 		RestTemplate restTemplate = new RestTemplate();
-
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
@@ -66,7 +66,6 @@ public class LoginController {
 		ResponseEntity<AccessKey> response = restTemplate.postForEntity(exchUrl, request, AccessKey.class);
 
 		AccessKey body = response.getBody();
-		System.out.println(body.getAccessToken());
 		return body.getAccessToken();
 	}
 }

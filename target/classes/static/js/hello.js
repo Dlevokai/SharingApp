@@ -16,6 +16,17 @@ var app = angular.module('hello', []);
     app.controller('JavaHttpTest', function($scope, $http) {
     	$http.get('./angularJsCall').
     	    then(function(response) {
+    	    	console.log(response.data);
     	        $scope.greeting = response.data;
     	    });
-        });
+    }); 
+    
+    app.controller('JavaHttpGetBal', function($scope, $http) {
+    	$http.get('./getBankData').
+    	    then(function(response) {
+    	    	console.log(response.data);
+    	        $scope.bankData = response.data;
+    	    });
+    }); 
+    
+  

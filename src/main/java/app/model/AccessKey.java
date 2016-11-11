@@ -2,6 +2,7 @@ package app.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class AccessKey {
 
     protected String accessToken;
