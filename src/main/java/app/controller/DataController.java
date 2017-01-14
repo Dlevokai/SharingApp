@@ -1,5 +1,6 @@
 package app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,6 +18,9 @@ import app.model.Credentials;
 public class DataController {
 
 	public static final String BalanceUrl = "https://tartan.plaid.com/balance";
+	
+	@Autowired
+	Credentials credentials;
 	
 	@RequestMapping("/getBankData")
 	public BankData getBankData(){
