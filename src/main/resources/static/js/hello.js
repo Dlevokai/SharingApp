@@ -1,4 +1,4 @@
-var app = angular.module('hello', []);
+var app = angular.module('hello', ["ngRoute"]);
 
     app.controller('home', function($scope) {
 	  
@@ -28,5 +28,12 @@ var app = angular.module('hello', []);
     	        $scope.bankData = response.data;
     	    });
     }); 
+    
+    app.config(function($routeProvider) {
+    	  $routeProvider
+    	  .when("/graph", {
+    	    templateUrl : "/graph.html"
+    	  });
+    });
     
   
