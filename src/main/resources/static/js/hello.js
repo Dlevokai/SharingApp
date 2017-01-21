@@ -29,11 +29,23 @@ var app = angular.module('hello', ["ngRoute"]);
     	    });
     }); 
     
+    app.controller('BoardCtrl', function($scope, $http) {
+        $http.get("http://www.w3schools.com/angular/customers.php")
+        .then(function (response) {$scope.names = response.data.records;
+        });
+    });
+    
     app.config(function($routeProvider) {
     	  $routeProvider
     	  .when("/graph", {
     	    templateUrl : "/graph.html"
-    	  });
+    	  })
+    	  .when("/", {
+      	    templateUrl : "/home.html"
+      	  })
+      	  .when("/leaderboard", {
+      	  	templateUrl : "/leaderboard.html"	
+      	  });
     });
     
   

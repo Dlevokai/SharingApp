@@ -1,0 +1,18 @@
+<div ng-controller="BoardCtrl" class="container">
+  <center><h2>Leaderboard of Top Contributors</h2></center>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Percent Contributed</th>
+        <th>Quantity Contributed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "x in names">
+        <td>{{x.Name}}</td>
+        <td>{{x.Country}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
