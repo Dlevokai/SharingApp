@@ -26,6 +26,13 @@ app.controller('JavaHttpTest', function($scope, $http) {
 	});
 });
 
+app.controller('H2DataTest', function($scope, $http) {
+	$http.get('./getH2Data').then(function(response) {
+		console.log(response.data);
+		$scope.product = response.data;
+	});
+});
+
 app.controller('JavaHttpGetBal', function($scope, $http) {
 	$http.get('./getBankData').then(function(response) {
 		console.log(response.data);
