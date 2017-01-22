@@ -16,3 +16,23 @@
     </tbody>
   </table>
 </div>
+
+<div ng-controller="PlayerBoardCtrl" class="container">
+  <center><h2> Player Board </h2></center>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Percent Contributed</th>
+        <th>Quantity Contributed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "x in players">
+        <td>{{x.Name}}</td>
+        <td>{{x.PercentContributed}}</td>
+        <td>{{x.QuantityContributed}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

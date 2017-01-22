@@ -33,6 +33,13 @@ app.controller('H2DataTest', function($scope, $http) {
 	});
 });
 
+app.controller('PlayerBoardCtrl', function($scope, $http) {
+	$http.get('./getPlayerList').then(function(response) {
+		console.log(response.data);
+		$scope.players = response.data;
+	});
+});
+
 app.controller('JavaHttpGetBal', function($scope, $http) {
 	$http.get('./getBankData').then(function(response) {
 		console.log(response.data);
