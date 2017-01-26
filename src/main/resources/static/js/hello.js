@@ -1,7 +1,6 @@
 var app = angular.module('hello', [ "ngRoute" ]);
 
 app.controller('home', function($scope) {
-
 	$scope.salutation = {
 		id : 'yyy',
 		content : 'good bye!'
@@ -11,6 +10,7 @@ app.controller('home', function($scope) {
 		content : 'hard coded!'
 	}
 });
+
 
 app.controller('httpTest', function($scope, $http) {
 	$http.get('http://rest-service.guides.spring.io/greeting').then(
@@ -62,4 +62,17 @@ app.config(function($routeProvider) {
 	}).when("/leaderboard", {
 		templateUrl : "/leaderboard.html"
 	});
-});
+}).
+  controller('navBarCtrl', ['$scope', '$location', function($scope, $location) {
+      $scope.showHeader = $location.path() === '/leaderboard';
+      /*$scope.showHeader = $location.path() !== '/leaderboard';*/
+}]);
+
+/*app.controller('navBarCtrl', function($scope) {
+	$scope.showHeader = true;
+});*/
+
+/*app.controller('routeController', ['$scope', '$location', function($scope, $location) {
+	$scope.showHeader = true;
+  }]);*/
+
