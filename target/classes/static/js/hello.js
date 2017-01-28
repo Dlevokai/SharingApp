@@ -62,7 +62,9 @@ app.config(function($routeProvider) {
 		templateUrl : "/home.html"
 	}).when("/leaderboard", {
 		templateUrl : "/leaderboard.html"
-	});
+	}).when("/login", {
+      		templateUrl : "/login.html"
+    });
 });
 
 /*app.controller('navBarCtrl', function($scope) {
