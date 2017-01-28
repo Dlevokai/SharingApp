@@ -27,17 +27,11 @@ app.controller('JavaHttpTest', function($scope, $http) {
 
 app.controller('H2DataTest', function($scope, $http) {
 	$http.get('./getH2Data').then(function(response) {
-		console.log(response.data);
+		/*console.log(response.data);*/
 		$scope.product = response.data;
 	});
 });
 
-app.controller('PlayerBoardCtrl', function($scope, $http) {
-	$http.get('./getPlayerList').then(function(response) {
-		console.log(response.data);
-		$scope.players = response.data;
-	});
-});
 
 app.controller('JavaHttpGetBal', function($scope, $http) {
 	$http.get('./getBankData').then(function(response) {
@@ -46,9 +40,17 @@ app.controller('JavaHttpGetBal', function($scope, $http) {
 	});
 });
 
+app.controller('PlayerBoardCtrl', function($scope, $http) {
+	$http.get('./getPlayerList').then(function(response) {
+		console.log(response.data);
+		$scope.players = response.data.playerList;
+	});
+});
+
 app.controller('BoardCtrl', function($scope, $http) {
 	$http.get("http://www.w3schools.com/angular/customers.php").then(
 			function(response) {
+			    console.log(response.data);
 				$scope.names = response.data.records;
 			});
 });

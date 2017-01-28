@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import app.model.PlayerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,12 +43,15 @@ public class HelloController {
 	}
 	
 	@RequestMapping("/getPlayerList")
-	public Iterable<Player> getPlayerList() {
-		
+	public PlayerList getPlayerList() {
 		Iterable<Player> playersIterator = playerRepository.findAll();
-		//List<Player> playersList = new ArrayList<Player>();
-		//playersIterator.forEachRemaining(playersList::add);
-		return playersIterator;
+		List<Player> tempPlayersList = new ArrayList<Player>();
+		for (Player player : playersIterator){
+			tempPlayersList.add(player);
+		}
+		PlayerList jsonPlayerList = new PlayerList();
+		jsonPlayerList.setPlayerList(tempPlayersList);
+		return jsonPlayerList;
 	}
 	
 	//@RequestMapping("/testGetBOFAData")

@@ -11,7 +11,6 @@ app.controller('home', function($scope) {
 	}
 });
 
-
 app.controller('httpTest', function($scope, $http) {
 	$http.get('http://rest-service.guides.spring.io/greeting').then(
 			function(response) {
@@ -28,17 +27,11 @@ app.controller('JavaHttpTest', function($scope, $http) {
 
 app.controller('H2DataTest', function($scope, $http) {
 	$http.get('./getH2Data').then(function(response) {
-		console.log(response.data);
+		/*console.log(response.data);*/
 		$scope.product = response.data;
 	});
 });
 
-app.controller('PlayerBoardCtrl', function($scope, $http) {
-	$http.get('./getPlayerList').then(function(response) {
-		console.log(response.data);
-		$scope.players = response.data;
-	});
-});
 
 app.controller('JavaHttpGetBal', function($scope, $http) {
 	$http.get('./getBankData').then(function(response) {
@@ -47,9 +40,17 @@ app.controller('JavaHttpGetBal', function($scope, $http) {
 	});
 });
 
+app.controller('PlayerBoardCtrl', function($scope, $http) {
+	$http.get('./getPlayerList').then(function(response) {
+		console.log(response.data);
+		$scope.players = response.data.playerList;
+	});
+});
+
 app.controller('BoardCtrl', function($scope, $http) {
 	$http.get("http://www.w3schools.com/angular/customers.php").then(
 			function(response) {
+			    console.log(response.data);
 				$scope.names = response.data.records;
 			});
 });
@@ -62,11 +63,7 @@ app.config(function($routeProvider) {
 	}).when("/leaderboard", {
 		templateUrl : "/leaderboard.html"
 	});
-}).
-  controller('navBarCtrl', ['$scope', '$location', function($scope, $location) {
-      $scope.showHeader = $location.path() === '/leaderboard';
-      /*$scope.showHeader = $location.path() !== '/leaderboard';*/
-}]);
+});
 
 /*app.controller('navBarCtrl', function($scope) {
 	$scope.showHeader = true;

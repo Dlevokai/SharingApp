@@ -1,4 +1,4 @@
-<div ng-controller="BoardCtrl" class="container">
+<!--<div ng-controller="BoardCtrl" class="container">
   <center><h2>Leaderboard of Top Contributors</h2></center>
   <table class="table table-striped">
     <thead>
@@ -15,7 +15,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div>-->
 
 <div ng-controller="PlayerBoardCtrl" class="container">
   <center><h2> Player Board </h2></center>
@@ -29,7 +29,7 @@
     </thead>
     <tbody>
       <tr ng-repeat = "x in players">
-        <td>{{x.Name}}</td>
+        <td>{{x.name}}</td>
         <td>{{x.PercentContributed}}</td>
         <td>{{x.QuantityContributed}}</td>
       </tr>
