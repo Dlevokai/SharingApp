@@ -11,7 +11,6 @@ app.controller('home', function($scope) {
 	}
 });
 
-
 app.controller('httpTest', function($scope, $http) {
 	$http.get('http://rest-service.guides.spring.io/greeting').then(
 			function(response) {
@@ -62,11 +61,7 @@ app.config(function($routeProvider) {
 	}).when("/leaderboard", {
 		templateUrl : "/leaderboard.html"
 	});
-}).
-  controller('navBarCtrl', ['$scope', '$location', function($scope, $location) {
-      $scope.showHeader = $location.path() === '/leaderboard';
-      /*$scope.showHeader = $location.path() !== '/leaderboard';*/
-}]);
+});
 
 /*app.controller('navBarCtrl', function($scope) {
 	$scope.showHeader = true;
