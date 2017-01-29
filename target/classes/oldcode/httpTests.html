@@ -1,0 +1,32 @@
+<h1>AngularTest</h1>
+<div ng-controller="home" ng-cloak class="ng-cloak">
+    <p>The ID is {{greeting.id}}</p>
+    <p>The content is {{greeting.content}}</p>
+    <p>The ID is {{salutation.id}}</p>
+    <p>The content is {{salutation.content}}</p>
+</div>
+<h1>RestCallTest</h1>
+<div ng-controller="httpTest">
+    <p>The ID is {{greeting.id}}</p>
+    <p>The content is {{greeting.content}}</p>
+</div>
+
+<h1>JavaRestCallTest</h1>
+<div ng-controller="JavaHttpTest">
+    <p>The ID is {{greeting.id}}</p>
+    <p>The content is {{greeting.content}}</p>
+</div>
+
+<h1>H2DataTest</h1>
+<div ng-controller="H2DataTest">
+    <p>The price from H2 is {{product.price}}</p>
+</div>
+
+<!-- <h1>JavaRestCallTest</h1>
+<div ng-controller="JavaHttpGetBal">
+    <p>Danila's current balance is  {{bankData.accounts[0].balance.current}}</p>
+    <p>Danila's available balance is  {{bankData.accounts[0].balance.available}}</p>
+</div>   -->
+
+<a href="#graph" type="button" class="btn btn-primary">Activate
+    ng-view</a>
