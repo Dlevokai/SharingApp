@@ -42,21 +42,6 @@ public class PlaidLoginController {
 		return public_token;
 	}
 
-	/*
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping(value = "/exchange_token", method = RequestMethod.POST)
-	 * public String plaidAuthenticationGetAccessKey(@RequestParam String
-	 * public_token) { return public_token; }
-	 */
-	/*
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping(value = "/authenticate", method = RequestMethod.GET)
-	 * public String getTest(@RequestParam String public_token) { return
-	 * "get Request"; }
-	 */
-
 	public String getAccessToken(String clientId, String secret, String publicToken) {
 
 		RestTemplate restTemplate = new RestTemplate();
