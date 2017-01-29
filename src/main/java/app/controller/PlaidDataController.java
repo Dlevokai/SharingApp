@@ -15,12 +15,12 @@ import app.model.BankData;
 import app.model.Credentials;
 
 @RestController
-public class DataController {
-
-	public static final String BalanceUrl = "https://tartan.plaid.com/balance";
+public class PlaidDataController {
 	
 	@Autowired
 	Credentials credentials;
+
+	public static final String BalanceUrl = "https://tartan.plaid.com/balance";
 	
 	@RequestMapping("/getBankData")
 	public BankData getBankData(){

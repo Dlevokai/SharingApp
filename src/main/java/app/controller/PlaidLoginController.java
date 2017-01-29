@@ -18,7 +18,7 @@ import app.model.AccessKey;
 import app.model.Credentials;
 
 @Controller
-public class LoginController {
+public class PlaidLoginController {
 
 	@Autowired
 	private Credentials credentials;
