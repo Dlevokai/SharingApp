@@ -1,4 +1,4 @@
-var app = angular.module('hello', [ "ngRoute" ]);
+var app = angular.module('app', [ "ngRoute" ]);
 
 app.controller('JavaHttpGetBal', function($scope, $http) {
 	$http.get('./getBankData').then(function(response) {
